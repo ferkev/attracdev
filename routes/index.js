@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+
 mongoose.connect("mongodb://ferkev:ferkev@ds119150.mlab.com:19150/attractdev",
     function(err) {
      console.log(err);
