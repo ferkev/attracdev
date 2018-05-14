@@ -2,10 +2,36 @@ var express = require('express');
 var router = express.Router();
 var mongoose= require('mongoose');
 /* GET home page. */
+
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/*
+router.post('/' , function(req, res, next){
+  res.render('researchproject', { title: 'researchProjects'})
+})
+
+router.get('/founder/id')
+
+router.get('/developer/id')
+
+router.get('/projects')
+router.get('/projects/id')
+
+router.get('/register/founder')
+router.post('/register/founder')
+
+
+router.get('/register/developer')
+router.post('/register/developer')
+
+router.get('/login')
+router.post('/login')
+
+router.get('/admin')
+*/
 
 mongoose.connect("mongodb://ferkev:ferkev@ds119150.mlab.com:19150/attractdev",
     function(err) {
