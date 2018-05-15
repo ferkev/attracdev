@@ -12,7 +12,7 @@
 			<div class="ban">
 					<div class="container">
 						<div class="row">
-							<div class="ban-header col-md-3 pt-2">FYF-Start-Up.io</div>
+							<div class="ban-header col-md-3 pt-2">attracdev</div>
 							<div class="search col-md-8">
 								<div class="row">
 									<form class="col-md-12">
@@ -39,7 +39,7 @@
 				<section class="row section-header">
 					<div class="cards card1 col-md-4">
 						<h4> Espace Funder</h4>
-						<a href=""><button class="my-5 btn btn-outline-success" id="login">Connectez-vous</button></a>
+						<a href=""><button class="my-5 btn btn-outline-success" id="fun_login">Connectez-vous</button></a>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -50,7 +50,7 @@
 					<div class="col-md-4"></div>
 					<div class="cards card2 col-md-4">
 						<h4> Espace Developpeur</h4>
-						<a href=""><button class="my-5 btn btn-outline-success">Connectez-vous</button></a>
+						<a href=""><button class="my-5 btn btn-outline-success" id="dev_login">Connectez-vous</button></a>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -60,7 +60,8 @@
 					</div>
 				</section>
 
-        <div class="tab_container hide" id="tab_container">
+				<!-- Auth and register funder -->
+        <div class="tab_container hide" id="tab_container_fun">
             <input id="tab1" type="radio" name="tabs" checked>
             <label for="tab1"><i class="fas fa-sign-in-alt"></i><span> Se connecter</span></label>
 
@@ -71,16 +72,17 @@
 
             <section id="content1" class="tab-content">
                 <div id="close"><i class="far fa-times-circle close" id="close"></i></div>
+								<h4>Funder</h4>
                 <p>
                   <div class="row">
                     <div class="col-md-10 m-auto bg-dark pt-2 text-right rounded">
                       <form class="form-inline" action="/SiginIn" method="post">
-                        <label class="sr-only" for="inlineFormInputName2">Name</label>
-                        <input type="text" name="name" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Votre nom">
+                        <label class="sr-only" for="inlineFormInputName1">Name</label>
+                        <input type="text" name="fun_name" class="form-control mb-2 mr-sm-2" id="inlineFormInputName1" placeholder="Votre nom">
 
-                        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                        <label class="sr-only" for="inlineFormInputGroupUsername1">Username</label>
                         <div class="input-group mb-2 mr-sm-2">
-                          <input type="password" name="pwd" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Mot de passe">
+                          <input type="password" name="fun_pwd" class="form-control" id="inlineFormInputGroupUsername1" placeholder="Mot de passe">
                         </div>
 
                         <button type="submit" class="btn btn-primary mb-2">Sign In</button>
@@ -105,23 +107,98 @@
                                    <h3 class="text-center indigo-text font-bold py-4"><strong>Inscription</strong></h3>
                                    <div class="md-form">
                                        <i class="fa fa-user prefix white-text"></i>
-                                       <input type="text" id="username" name="username" value="" class="form-control">
+                                       <input type="text" id="fun_username" name="username" value="" class="form-control">
                                    </div>
                                    <div class="md-form">
                                        <i class="fa fa-envelope prefix white-text"></i>
-                                       <input type="mail" id="email" name="email" value="" class="form-control">
+                                       <input type="mail" id="fun_email" name="email" value="" class="form-control">
                                    </div>
                                    <div class="md-form">
                                        <i class="fa fa-envelope prefix white-text"></i>
-                                       <input type="mail" id="reEmail" name="reEmail" value="" class="form-control">
+                                       <input type="mail" id="fun_reEmail" name="reEmail" value="" class="form-control">
                                    </div>
                                    <div class="md-form">
                                        <i class="fa fa-envelope prefix white-text"></i>
-                                       <input type="password" id="pwd" name="pwd" value="" class="form-control">
+                                       <input type="password" id="fun_pwd" name="pwd" value="" class="form-control">
                                    </div>
                                    <div class="md-form">
                                        <i class="fa fa-envelope prefix white-text"></i>
-                                       <input type="password" id="rePwd" name="rePwd" value="" class="form-control">
+                                       <input type="password" id="fun_rePwd" name="rePwd" value="" class="form-control">
+                                   </div>
+                                   <div class="text-center py-4">
+                                       <button type="submit" class="btn btn-indigo">SignUp<i class="fa fa-paper-plane-o ml-1"></i></button>
+                                   </div>
+                               </form>
+                               <!-- Form subscription -->
+                           </div>
+                       </div>
+                   </div>
+                  </div>
+                </p>
+            </section>
+        </div>
+
+				<!-- auth & register dev -->
+				<div class="tab_container hide" id="tab_container_dev">
+            <input id="tab3" type="radio" name="tabs" checked>
+            <label for="tab3"><i class="fas fa-sign-in-alt"></i><span> Se connecter</span></label>
+
+            <input id="tab4" type="radio" name="tabs">
+            <label for="tab4"><i class="fa fa-calendar"></i><span>S'enregistrer</span></label>
+
+            <section id="content3" class="tab-content">
+                <div id="close"><i class="far fa-times-circle close" id="close"></i></div>
+								<h4>developpeur</h4>
+                <p>
+                  <div class="row">
+                    <div class="col-md-10 m-auto bg-dark pt-2 text-right rounded">
+                      <form class="form-inline" action="/SiginIn" method="post">
+                        <label class="sr-only" for="inlineFormInputName2">Name</label>
+                        <input type="text" name="dev_name" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Votre nom">
+                        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                        <div class="input-group mb-2 mr-sm-2">
+                          <input type="password" name="dev_pwd" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Mot de passe">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mb-2">Sign In</button>
+                      </form>
+
+                    </div>
+                  </div>
+                </p>
+            </section>
+
+            <section id="content4" class="tab-content">
+              <div id="close"><i class="far fa-times-circle close" id="close"></i></div>
+                <p>
+                  <div class="row mt-1" id="siginup">
+                    <!-- Grid column -->
+                    <div class="col-md-6 mb-4 m-auto py-5" >
+
+                       <div class="card near-moon-gradient form-white">
+                           <div class="card-body">
+                           <!-- Form subscription -->
+                               <form action="/SiginUp" method="post">
+                                   <h3 class="text-center indigo-text font-bold py-4"><strong>Inscription</strong></h3>
+                                   <div class="md-form">
+                                       <i class="fa fa-user prefix white-text"></i>
+                                       <input type="text" id="dev_username" name="username" value="" class="form-control">
+                                   </div>
+                                   <div class="md-form">
+                                       <i class="fa fa-envelope prefix white-text"></i>
+                                       <input type="mail" id="dev_email" name="email" value="" class="form-control">
+                                   </div>
+                                   <div class="md-form">
+                                       <i class="fa fa-envelope prefix white-text"></i>
+                                       <input type="mail" id="dev_reEmail" name="reEmail" value="" class="form-control">
+                                   </div>
+                                   <div class="md-form">
+                                       <i class="fa fa-envelope prefix white-text"></i>
+                                       <input type="password" id="dev_pwd" name="pwd" value="" class="form-control">
+                                   </div>
+                                   <div class="md-form">
+                                       <i class="fa fa-envelope prefix white-text"></i>
+                                       <input type="password" id="dev_rePwd" name="rePwd" value="" class="form-control">
                                    </div>
                                    <div class="text-center py-4">
                                        <button type="submit" class="btn btn-indigo">SignUp<i class="fa fa-paper-plane-o ml-1"></i></button>

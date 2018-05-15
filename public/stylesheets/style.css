@@ -142,9 +142,10 @@ a {
   margin: 0 auto;
   padding-top: 30px;
   position: absolute;
-	top: 10px;
 	z-index: 999;
+	top: 32.7px;
 }
+
 
 input, section {
   clear: both;
