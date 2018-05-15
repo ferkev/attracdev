@@ -35,7 +35,12 @@ router.get('/admin')
 
 mongoose.connect("mongodb://ferkev:ferkev@ds119150.mlab.com:19150/attractdev",
     function(err) {
-     console.log(err);
+      if(!err) {
+        console.log('La connexion à la base de données a été un succes');
+      }
+      else {
+        console.log(err);
+      }
     }
 );
 
