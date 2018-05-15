@@ -5,17 +5,29 @@ var mongoose= require('mongoose');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'home' });
 });
+
+
+router.get('/founder', function(req, res, next){
+  res.render('founder', {title: 'founder'})
+});
+
+router.get('/founder/id', function(req, res, next){
+  res.render('myfounder', { title: 'Founder/id'})
+});
+
+
 
 /*
 router.post('/' , function(req, res, next){
   res.render('researchproject', { title: 'researchProjects'})
 })
 
-router.get('/founder/id')
+
 
 router.get('/developer/id')
+
 
 router.get('/projects')
 router.get('/projects/id')
@@ -57,9 +69,15 @@ var developerSchema = mongoose.Schema({
 })
 
 
+var categorySchema = mongoose.Schema({
+  categoryName: String,
+
+})
+
 var projectSchema = mongoose.Schema({
   title: String,
   description: String,
+  category_id: String,
   creationDate: { type: Date, default: Date.now },
   effective: Number,
   entrepriseName: String,
@@ -69,6 +87,11 @@ var projectSchema = mongoose.Schema({
 var developerModel = mongoose.model('developers', developerSchema);
 var  founderModel = mongoose.model('founders', founderSchema);
 var projectSchema = mongoose.model('projects', projectSchema);
-
+/*
+var newdeveloper = new developerModel({
+  email: "bonjour",
+  password: 'avion',
+});
+*/
 
 module.exports = router;
